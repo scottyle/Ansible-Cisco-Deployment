@@ -1,3 +1,6 @@
+#This playbook is used to set the description of the Ge2/0 interfaces for both routers, this playbook will pull the desc from each router yaml file 
+#contained in hosts_vars director
+
 - name: host_vars Example
   hosts: cisco
   gather_facts: false

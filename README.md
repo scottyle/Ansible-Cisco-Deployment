@@ -1,8 +1,8 @@
 # Week4-Excerise
 Week4-Excerise
-Contains the playbooks and host files that were used to config
+Contains the ansible playbooks and host files that were used to configure 
   
-    Hostname
+    Router Hostname
     Login Banner
     SNMP
     Name Servers

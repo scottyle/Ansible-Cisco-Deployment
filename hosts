@@ -1,3 +1,4 @@
+#inventory file for cisco routers 
 [all:vars]
 ansible_user=admin
 ansible_password=admin
