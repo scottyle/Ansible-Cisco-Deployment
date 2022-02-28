@@ -4,12 +4,14 @@
   gather_facts: no
 
   tasks:
+  #This task is used to set the host name for the router using the inventory name inside the inventory file
     - name: set hostname
       cisco.ios.ios_hostname:
         config:
           hostname: "{{ inventory_hostname }}"
         state: merged
-
+  
+  #This task is used to set the login banner
     - name: Set login banner
       cisco.ios.ios_banner:
         banner: login
@@ -18,6 +20,8 @@
           that contains a multiline
           string
         state: present
+ 
+  #This task is used to apply the SNMP configuration 
 
     - name: Apply the SNMP configuration
       cisco.ios.ios_snmp_server:
@@ -31,13 +35,15 @@
               - stun
               - pki
               version: 2c
-
+  
+  #This task is used to set the NTP server to google 8.8.8.8
     - name: Set NTP
       cisco.ios.ios_ntp:
         server: 8.8.8.8
         logging: false
         state: present
 
+  #This task is used to setup OSPF on Ge1/0 interfaces using the process ID of 1 and area id of 0 each cost is set to 5
     - name: Merge provided OSPF Interfaces configuration
       cisco.ios.ios_ospf_interfaces:
         config:
