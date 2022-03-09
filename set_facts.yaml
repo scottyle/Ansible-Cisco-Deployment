@@ -1,5 +1,5 @@
 ---
-- name:  Set router hostnames
+- name:  Set router configurations
   hosts: cisco
   gather_facts: no
 
